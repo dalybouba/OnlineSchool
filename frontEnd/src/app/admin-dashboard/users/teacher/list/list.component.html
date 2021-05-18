@@ -1,0 +1,62 @@
+<button nz-button (click)="add()" style="float: right;" nzType="primary">Add</button>
+<br />
+<br />
+<!-- <nz-table #editRowTable nzBordered [nzData]="listOfData"> -->
+<nz-table>
+  <thead>
+    <tr>
+      <th >Title</th>
+      <th>Name</th>
+      <th >Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | userfilter: filterUser" class="editable-row">
+      <td>
+        <!-- <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)"> -->
+          {{ user.userName }}
+        <!-- </div>
+        <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" /> -->
+      </td>
+      <td>{{ user.email }}</td>
+      <td>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="read(user._id)"><i nz-icon nzType="eye" nzTheme="twotone"> </i> </a>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="update(user._id)"><i nz-icon nzType="edit" nzTheme="twotone"> </i> </a>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="delete(user._id)"><i nz-icon nzType="delete" nzTheme="twotone"> </i> </a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Update" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="title">Title</nz-form-label>
+        <nz-form-control [nzSpan]="8" nzErrorTip="Please input a title">
+          <input type="text" nz-input formControlName="title" placeholder="Please input your title" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="question" >Question</nz-form-label>
+        <nz-form-control [nzSpan]="8" nzErrorTip="Please input your question">
+          <input type="text" nz-input formControlName="question" placeholder="Please input your question" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="response" >Response</nz-form-label>
+        <nz-form-control [nzSpan]="8" nzErrorTip="Please input your response">
+          <input type="text" nz-input formControlName="response" placeholder="Please input your response" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzSpan]="8" [nzOffset]="4">
+          <button nz-button nzType="primary">Check</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
+<!-- <app-update [id]="id"></app-update> -->
+<app-create [create]='create'  (out)='refresh($event)'></app-create>

@@ -1,0 +1,45 @@
+<div class="space-align-container">
+    <div style="margin-top: 1vw;">
+        <nz-card [nzExtra]="extraTemplate" style="background-color: rgb(163, 178, 248);padding: 50px;margin: 10px;">
+            <h3>studentname</h3>
+            <button nz-button nzType="primary">14 courses complited</button>
+            <nz-progress [nzPercent]="99.9" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active">
+            </nz-progress>
+        </nz-card>
+        <ng-template #extraTemplate>
+            <nz-avatar [nzSize]="64" nzIcon="user"></nz-avatar>
+        </ng-template>
+    </div>
+    <div  style="margin-top: 1vw;">
+        <nz-card [nzExtra]="extraTemplate2" style="background-color: rgb(163, 178, 248);padding: 76px;margin: 10px;">
+            <h2>70 Days since you start</h2>
+            <p>141 new word</p>
+        </nz-card>
+        <ng-template #extraTemplate2>
+            <nz-title></nz-title>
+        </ng-template>
+    </div>
+    <div   style="margin-top: 1vw;">
+        <nz-card [nzExtra]="extraTemplate1" style="background-color: rgb(163, 178, 248);padding: 76px;margin: 10px;">
+            <p>Card content</p>
+            <nz-progress [nzPercent]="50.5" [nzStrokeColor]="{ '0%': '#108ee9', '100%': '#87d068' }" nzStatus="active">
+            </nz-progress>
+        </nz-card>
+        <ng-template #extraTemplate1>
+            <h3> Waiting courses</h3>
+
+        </ng-template>
+    </div>
+    <div  style="margin-top: 1vw;">
+        <nz-card [nzExtra]="extraTemplate4" style="background-color: rgb(163, 178, 248);padding: 76px;margin: 10px;">
+            <p>View more</p>
+            <button nz-button nzType="primary">select</button>
+        </nz-card>
+        <ng-template #extraTemplate4>
+            <h3> Waiting courses</h3>
+
+        </ng-template>
+    </div>
+
+
+</div>

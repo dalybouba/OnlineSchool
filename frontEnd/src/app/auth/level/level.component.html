@@ -1,0 +1,25 @@
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 1vw;">
+    <div nz-col nzXs="20" nzSm="12" nzMd="8" nzLg="6" nzXl="6" nzSpan="6">
+        <img src="../../../assets/img/20210330212150_Carna_AI_Logo_Text.png" style="width: 100%;">
+        <h1 style="text-align: center;">How will you use Carna</h1>
+    </div>
+</div>
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 1vw;">
+    <div nz-col nzXs="20" nzSm="12" nzMd="8" nzLg="6" nzXl="6" nzSpan="6">
+        <nz-card *ngFor='let item of data' style="width:100%;" [nzExtra]="extraTemplate">
+            <nzTitle>
+                <nz-radio-group style="float: right;" [(ngModel)]="radioValue">
+                    <label nz-radio [nzValue]="item"></label>
+                </nz-radio-group>
+            </nzTitle>
+            <h3>{{item.title}}</h3>
+            <br>
+            <br>
+            <h6>{{item.level}}</h6>
+        </nz-card>
+        <div nz-col nzXs="20" nzSm="20" nzMd="20" nzLg="20" nzXl="20" nzSpan="20" style="margin-top: 5vw;">
+            <button nz-button class="login-form-button login-form-margin" (click)='continue()' [nzType]="'primary'"
+                style="width: 100%;">Continue</button>
+        </div>
+    </div>
+</div>

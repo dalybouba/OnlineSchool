@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.ant-input-affix-wrapper  {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    padding: 4px 11px;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: #fff;
+    background-image: none;
+    border-bottom: groove;
+    border-radius: 2px;
+    transition: all .3s;
+    display: inline-flex;
+    /* border: 1px !important;; */
+}

@@ -1,0 +1,57 @@
+/* [nz-button] {
+    margin-right: 8px;
+    margin-bottom: 12px;
+  }
+
+  nz-button-group [nz-button] {
+    margin-right: 0;
+  } */
+  /* li {
+    background: #812897;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+   */
+   /* li:hover{
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+  } */
+
+ /* li:active li:focus, li:hover {
+    color: #d05151;
+    background: #282a2b;
+    border-color: #40a9ff;
+} */
+ 
+  /* .ant-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0;
+    color: rgba(0,0,0,.85);
+}
+  .ant-list-split .ant-list-item {
+    border: 1px  #1d1b1b;
+    border-radius: 5%;
+    margin-top: 4px;
+}
+
+.ant-list * {
+  outline: 0;
+  margin-left: 0px;
+}
+.ant-list  {
+    margin: 10px !important;
+}
+dd, h1, h2, h3, h4, h5, h6, legend {
+    margin-bottom: 0em;
+} */
+
+[nz-button] {
+    margin-bottom: 12px;
+  }

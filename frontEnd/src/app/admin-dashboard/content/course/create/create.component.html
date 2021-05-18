@@ -1,0 +1,23 @@
+<nz-modal [(nzVisible)]="create" nzTitle="Create" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="4" nzRequired nzFor="title">Title</nz-form-label>
+          <nz-form-control [nzSpan]="8" nzErrorTip="Please input a title">
+            <input type="text" nz-input formControlName="title" placeholder="Please input your title" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="4" nzRequired nzFor="content" >Content</nz-form-label>
+          <nz-form-control [nzSpan]="8" nzErrorTip="Please input your content">
+            <input type="text" nz-input formControlName="content" placeholder="Please input your content" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control [nzSpan]="8" [nzOffset]="4">
+            <button nz-button nzType="primary">Check</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </ng-container>
+  </nz-modal>

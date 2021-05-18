@@ -1,0 +1,50 @@
+<button nz-button (click)="add()" style="float: right;" nzType="primary">Add</button>
+<br />
+<br />
+<nz-table>
+  <thead>
+    <tr>
+      <th >Title</th>
+      <th>Number</th>
+      <th >Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses" class="editable-row">
+      <td>
+      </td>
+      <td>{{ course.number }}</td>
+      <td>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="read(course._id)"><i nz-icon nzType="eye" nzTheme="twotone"> </i> </a>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="update(course._id)"><i nz-icon nzType="edit" nzTheme="twotone"> </i> </a>
+        <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (click)="delete(course._id)"><i nz-icon nzType="delete" nzTheme="twotone"> </i> </a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Update" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="title">Title</nz-form-label>
+        <nz-form-control [nzSpan]="8" nzErrorTip="Please input a title">
+          <input type="text" nz-input formControlName="title" placeholder="Please input your title" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="content" >Content</nz-form-label>
+        <nz-form-control [nzSpan]="8" nzErrorTip="Please input your content">
+          <input type="text" nz-input formControlName="content" placeholder="Please input your content" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzSpan]="8" [nzOffset]="4">
+          <button nz-button nzType="primary">Check</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
+<app-create [create]='create'  (out)='refresh($event)'></app-create>

@@ -1,0 +1,16 @@
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 20vw;">
+  <div nz-col nzXs="20" nzSm="12" nzMd="8" nzLg="6" nzXl="6" nzSpan="6">
+      <img src="../../../assets/img/326418685.jpg" alt="" style="width: 100%;">
+  </div>
+</div>
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 2vw;">
+    <div nz-col >
+        <nz-input-number [(ngModel)]="demoValue" [nzMin]="00" [nzMax]="99" [nzStep]="1"></nz-input-number>
+        <nz-input-number [(ngModel)]="demoValue1" [nzMin]="00" [nzMax]="99" [nzStep]="1"></nz-input-number>
+        <nz-input-number [(ngModel)]="demoValue2" [nzMin]="00" [nzMax]="99" [nzStep]="1"></nz-input-number>
+    <div nz-col style="margin-top: 7vw;" >
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)='goTo()' style="width: 100%;">Continue</button>
+    </div>
+    </div>
+    
+</div>

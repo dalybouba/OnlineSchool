@@ -1,0 +1,10 @@
+.space-align-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .ant-progress {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }

@@ -1,0 +1,20 @@
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 5vw;">
+    <div nz-col nzXs="20" nzSm="12" nzMd="8" nzLg="6" nzXl="6" nzSpan="6">
+        <img src="../../../assets/img/téléchargement.png" alt="" style="width: 100%;">
+    </div>
+</div>
+<div nz-row nzJustify="center" nzAlign="middle" style="margin-top: 2vw;">
+    <div nz-col nzXs="20" nzSm="12" nzMd="8" nzLg="6" nzXl="6" nzSpan="6">
+        <form nz-form class="login-form" style="width: 100%;">
+            <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+                (click)='register()'>Register</button>
+            <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)='logIn()'>Log
+                in</button>
+            <div nz-row class="login-form-margin">
+                <div nz-col [nzSpan]="12">
+                    <a class="login-form-forgot">Forgot password</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

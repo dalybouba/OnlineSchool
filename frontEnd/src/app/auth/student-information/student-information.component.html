@@ -1,0 +1,37 @@
+<nz-steps [nzCurrent]="current">
+    <nz-step nzTitle="In Progress"></nz-step>
+    <nz-step nzTitle="Waiting"></nz-step>
+    <nz-step nzTitle="Waiting"></nz-step>
+    <nz-step nzTitle="Waiting"></nz-step>
+    <nz-step nzTitle="Finished"></nz-step>
+  </nz-steps>
+
+  <div class="steps-content">
+      <div *ngIf="current === 0">
+        <app-background (next)='refresh($event)' (item)='updateUser($event)'></app-background>
+      </div>
+      <div *ngIf="current === 1">
+        <app-language (next)='refresh($event)' (item)='updateUser($event)'></app-language>
+      </div>
+      <div *ngIf="current === 2">
+        <app-age (next)='refresh($event)' (item)='updateUser($event)'></app-age>
+      </div>
+      <div *ngIf="current === 3">
+        <app-level (next)='refresh($event)' (item)='updateUser($event)'></app-level>
+      </div>
+      <div *ngIf="current === 4">
+        <app-congratulation></app-congratulation>
+      </div>
+      
+  </div>
+  <div class="steps-action">
+    <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+      <span>Previous</span>
+    </button>
+    <button nz-button nzType="default" (click)="next()" *ngIf="current < 2">
+      <span>Next</span>
+    </button>
+    <button nz-button nzType="primary" (click)="done()" *ngIf="current === 4">
+      <span>Done</span>
+    </button>
+  </div>
